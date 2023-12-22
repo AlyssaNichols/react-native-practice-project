@@ -1,21 +1,11 @@
 import React, { useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  TouchableHighlight,
-  Button,
-  Alert,
-  Platform,
-  StatusBar,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 import { useDeviceOrientation } from "@react-native-community/hooks";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
+import AppText from "./app/components/AppText/AppText";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AppButton from "./app/components/AppButton";
 
 export default function App() {
   return <WelcomeScreen />;
@@ -23,9 +13,10 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "antiquewhite",
     flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
