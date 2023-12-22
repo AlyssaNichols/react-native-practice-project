@@ -6,9 +6,11 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import AppText from "./app/components/AppText/AppText";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppButton from "./app/components/AppButton";
+import Card from "./app/components/Card";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default function App() {
-  return <WelcomeScreen />;
+  return <ListingDetailsScreen />;
 }
 
 const styles = StyleSheet.create({
