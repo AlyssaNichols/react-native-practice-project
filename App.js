@@ -1,5 +1,12 @@
-import React, { useEffect } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TextInput,
+} from "react-native";
 import { useDeviceOrientation } from "@react-native-community/hooks";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
@@ -15,11 +22,17 @@ import ListItem from "./app/components/ListItem";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
+import AppTextInput from "./app/components/AppTextInput";
 
 export default function App() {
+  const [firstName, setFirstName] = useState("");
+
   return (
     <GestureHandlerRootView>
-      <ListingsScreen />
+      <Screen>
+        <AppTextInput placeholder="Username or email" icon="email" />
+        <AppTextInput placeholder="Password" icon="key" />
+      </Screen>
     </GestureHandlerRootView>
   );
 }
