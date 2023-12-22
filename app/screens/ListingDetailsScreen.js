@@ -13,8 +13,8 @@ export default function ListingDetailsScreen() {
         <AppText style={styles.price}>$100</AppText>
         <View style={styles.userContainer}>
           <ListItem
-            image={require("../../assets/S-logo.png")}
-            title="Scheels Sports"
+            image={require("../../assets/headshot.jpeg")}
+            title="Jane Johnson"
             subTitle="5 Listings"
           />
         </View>
