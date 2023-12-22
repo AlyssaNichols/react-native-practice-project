@@ -7,7 +7,7 @@ import {
   StatusBar,
   TouchableWithoutFeedback,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -16,7 +16,7 @@ import Screen from "../components/Screen";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import ListItemFlagAction from "../components/ListItemFlagAction";
 // this will be data from backend in real app
-const messages = [
+const initialMessages = [
   {
     id: 1,
     title: "Title 1",
@@ -56,6 +56,16 @@ const messages = [
 ];
 
 export default function MessagesScreen() {
+  const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const handleDelete = (message) => {
+    console.log("Deleting", message);
+    const newMessages = setMessages(
+      messages.filter((m) => m.id !== message.id)
+    );
+  };
+
   return (
     <GestureHandlerRootView>
       <Screen>
@@ -67,14 +77,20 @@ export default function MessagesScreen() {
               title={item.title}
               subTitle={item.description}
               image={item.image}
-              onPress={() => console.log("Message selected", item)}
+              onPress={() => console.log("MESSAGE CLICKED", item)}
               renderRightActions={() => (
-                <ListItemDeleteAction onPress={() => console.log(item)} />
+                <ListItemDeleteAction onPress={() => handleDelete(item)} />
               )}
-              renderLeftActions={ListItemFlagAction}
+              renderLeftActions={() => (
+                <ListItemFlagAction onPress={() => console.log("FLAG", item)} />
+              )}
             />
           )}
           ItemSeparatorComponent={ListItemSeparator}
+          refreshing={refreshing}
+          onRefresh={() => {
+            setMessages(initialMessages);
+          }}
         />
       </Screen>
     </GestureHandlerRootView>

@@ -7,4 +7,5 @@ export default {
   light: "#DAD6D6",
   danger: "#ff5252",
   flag: "#FF9200",
+  logout: "#ffe66d",
 };
