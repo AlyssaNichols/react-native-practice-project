@@ -15,36 +15,66 @@ import FormImagePicker from "../components/Forms/FormImagePicker";
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
   price: Yup.number().required().min(1).max(10000).label("Price"),
-  description: Yup.string().required().label("Description"),
+  description: Yup.string().label("Description"),
   category: Yup.object().required().nullable().label("Category"),
   images: Yup.array().min(1, "Please select at least one image."),
 });
 
 const categories = [
-  { label: "Furniture", value: 1, backgroundColor: "#F78074", icon: "lamp" },
-  { label: "Cars", value: 2, backgroundColor: "#F8A95C", icon: "car-back" },
-  { label: "Camera", value: 3, backgroundColor: "#FDD65A", icon: "camera" },
-  { label: "Games", value: 4, backgroundColor: "#6FD294", icon: "cards" },
   {
+    backgroundColor: "#fc5c65",
+    icon: "floor-lamp",
+    label: "Furniture",
+    value: 1,
+  },
+  {
+    backgroundColor: "#fd9644",
+    icon: "car",
+    label: "Cars",
+    value: 2,
+  },
+  {
+    backgroundColor: "#fed330",
+    icon: "camera",
+    label: "Cameras",
+    value: 3,
+  },
+  {
+    backgroundColor: "#26de81",
+    icon: "cards",
+    label: "Games",
+    value: 4,
+  },
+  {
+    backgroundColor: "#2bcbba",
+    icon: "shoe-heel",
     label: "Clothing",
     value: 5,
-    backgroundColor: "#65C6C3",
-    icon: "shoe-heel",
   },
-  { label: "Sports", value: 6, backgroundColor: "#65B0F2", icon: "basketball" },
   {
+    backgroundColor: "#45aaf2",
+    icon: "basketball",
+    label: "Sports",
+    value: 6,
+  },
+  {
+    backgroundColor: "#4b7bec",
+    icon: "headphones",
     label: "Movies & Music",
     value: 7,
-    backgroundColor: "#5B8BEC",
-    icon: "headphones",
   },
   {
+    backgroundColor: "#a55eea",
+    icon: "book-open-variant",
     label: "Books",
     value: 8,
-    backgroundColor: "#A87FEB",
-    icon: "book-open-variant",
   },
-  { label: "Other", value: 9, backgroundColor: "#8697AD", icon: "tab" },
+  {
+    backgroundColor: "#778ca3",
+    icon: "application",
+    label: "Other",
+    value: 9,
+  },
 ];
 
 function ListingEditScreen() {
@@ -58,10 +88,10 @@ function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => console.log(location)}
         validationSchema={validationSchema}
       >
-        <FormImagePicker />
+        <FormImagePicker name="images" />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           keyboardType="numeric"
@@ -72,10 +102,11 @@ function ListingEditScreen() {
         />
         <AppFormPicker
           items={categories}
-          numberOfColumns={3}
           name="category"
-          placeholder="Category"
+          numberOfColumns={3}
           PickerItemComponent={CategoryPickerItem}
+          placeholder="Category"
+          width="50%"
         />
         <AppFormField
           maxLength={255}

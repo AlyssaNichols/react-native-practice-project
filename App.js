@@ -51,11 +51,7 @@ export default function App() {
     setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
   };
 
-  return (
-    <Screen>
-      <ListingEditScreen />
-    </Screen>
-  );
+  return <ListingEditScreen />;
 }
 
 const styles = StyleSheet.create({
