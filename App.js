@@ -24,7 +24,8 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
-import AppPicker from "./app/components/AppPicker";
+
+import LoginScreen from "./app/screens/LoginScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -36,20 +37,7 @@ export default function App() {
   const [isNew, setIsNew] = useState("");
   const [category, setCategory] = useState();
 
-  return (
-    <GestureHandlerRootView>
-      <Screen>
-        <AppPicker
-          items={categories}
-          icon="apps"
-          placeholder="Category"
-          selectedItem={category}
-          onSelectItem={(item) => setCategory(item)}
-        />
-        <AppTextInput icon="email" placeholder="Email" />
-      </Screen>
-    </GestureHandlerRootView>
-  );
+  return <LoginScreen />;
 }
 
 const styles = StyleSheet.create({
