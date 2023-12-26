@@ -19,39 +19,41 @@ import ListItemFlagAction from "../components/Lists/ListItemFlagAction";
 const initialMessages = [
   {
     id: 1,
-    title: "Title 1",
-    description: "Description 1",
+    title: "Jane Doe",
+    description: "Hey! Is this item still available?",
     image: require("../../assets/headshot.jpeg"),
   },
   {
     id: 2,
-    title: "Title 2",
-    description: "Description",
-    image: require("../../assets/headshot.jpeg"),
+    title: "Matthew Smith",
+    description: "I'm interested in this item. When will you be able to post?",
+    image: require("../../assets/headshot2.jpeg"),
   },
   {
     id: 3,
-    title: "Title 3",
-    description: "Description 3",
-    image: require("../../assets/headshot.jpeg"),
+    title: "Hannah Montana",
+    description: "Do you have any more photos available? I love this item!",
+    image: require("../../assets/headshot3.jpeg"),
   },
   {
     id: 4,
-    title: "Title 4",
-    description: "Description 4",
-    image: require("../../assets/headshot.jpeg"),
+    title: "Jill Sampson",
+    description:
+      "I'm very interested in this item. When will you be able to post?",
+    image: require("../../assets/headshot4.jpeg"),
   },
   {
     id: 5,
-    title: "Title 5",
-    description: "Description 5",
-    image: require("../../assets/headshot.jpeg"),
+    title: "Brittany Spears",
+    description:
+      "This item has peaked my interest. When will you be able to post?",
+    image: require("../../assets/headshot5.jpeg"),
   },
   {
     id: 6,
-    title: "Title 6",
-    description: "Description 6",
-    image: require("../../assets/headshot.jpeg"),
+    title: "Dean Miller",
+    description: "I love this! Is it available yet?",
+    image: require("../../assets/headshot6.jpeg"),
   },
 ];
 
