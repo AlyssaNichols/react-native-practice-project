@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   Image,
   TextInput,
+  Switch,
 } from "react-native";
 import { useDeviceOrientation } from "@react-native-community/hooks";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
@@ -23,15 +24,17 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
+  const [isNew, setIsNew] = useState("");
 
   return (
     <GestureHandlerRootView>
       <Screen>
-        <AppTextInput placeholder="Username or email" icon="email" />
-        <AppTextInput placeholder="Password" icon="key" />
+        <AppPicker icon="apps" placeholder="Category" />
+        <AppTextInput icon="email" placeholder="Email" />
       </Screen>
     </GestureHandlerRootView>
   );
