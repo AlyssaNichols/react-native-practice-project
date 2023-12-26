@@ -27,6 +27,10 @@ import AppTextInput from "./app/components/TextInput";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
+import * as ImagePicker from "expo-image-picker";
+import * as Permissions from "expo-permissions";
+import ImageInput from "./app/components/ImageInput";
+import ImageInputList from "./app/components/ImageInputList";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -34,14 +38,23 @@ const categories = [
   { label: "Cameras", value: 3 },
 ];
 export default function App() {
-  const [firstName, setFirstName] = useState("");
-  const [isNew, setIsNew] = useState("");
-  const [category, setCategory] = useState();
+  // const [firstName, setFirstName] = useState("");
+  // const [isNew, setIsNew] = useState("");
+  // const [category, setCategory] = useState();
+  const [imageUris, setImageUris] = useState([]);
+
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
+  };
+
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+  };
 
   return (
-    <GestureHandlerRootView>
+    <Screen>
       <ListingEditScreen />
-    </GestureHandlerRootView>
+    </Screen>
   );
 }
 
