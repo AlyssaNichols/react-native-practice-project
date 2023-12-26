@@ -8,9 +8,9 @@ import {
   ImageComponent,
 } from "react-native";
 import React from "react";
-import colors from "../config/colors";
+import colors from "../../config/colors";
 import Swipeable from "react-native-gesture-handler/Swipeable";
-import AppText from "./AppText/AppText";
+import AppText from "../AppText/AppText";
 
 export default function ListItem({
   title,

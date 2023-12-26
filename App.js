@@ -19,13 +19,14 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import Screen from "./app/components/Screen";
 import Icon from "./app/components/Icon";
-import ListItem from "./app/components/ListItem";
+import ListItem from "./app/components/Lists/ListItem";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
-
+import RegisterScreen from "./app/screens/RegisterScreen";
 import LoginScreen from "./app/screens/LoginScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -37,7 +38,7 @@ export default function App() {
   const [isNew, setIsNew] = useState("");
   const [category, setCategory] = useState();
 
-  return <LoginScreen />;
+  return <ListingEditScreen />;
 }
 
 const styles = StyleSheet.create({

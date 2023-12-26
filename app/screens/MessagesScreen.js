@@ -8,13 +8,13 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import React, { useState } from "react";
-import ListItem from "../components/ListItem";
-import ListItemSeparator from "../components/ListItemSeparator";
+import ListItem from "../components/Lists/ListItem";
+import ListItemSeparator from "../components/Lists/ListItemSeparator";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Screen from "../components/Screen";
-import ListItemDeleteAction from "../components/ListItemDeleteAction";
-import ListItemFlagAction from "../components/ListItemFlagAction";
+import ListItemDeleteAction from "../components/Lists/ListItemDeleteAction";
+import ListItemFlagAction from "../components/Lists/ListItemFlagAction";
 // this will be data from backend in real app
 const initialMessages = [
   {
