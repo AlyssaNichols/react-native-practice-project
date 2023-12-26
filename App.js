@@ -38,7 +38,11 @@ export default function App() {
   const [isNew, setIsNew] = useState("");
   const [category, setCategory] = useState();
 
-  return <ListingEditScreen />;
+  return (
+    <GestureHandlerRootView>
+      <MessagesScreen />
+    </GestureHandlerRootView>
+  );
 }
 
 const styles = StyleSheet.create({
